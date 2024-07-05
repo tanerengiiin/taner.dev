@@ -32,7 +32,7 @@ const PopoverPage = () => {
                   Your team&apos;s name
                 </label>
                 <input
-                  placeholder="Enter email address"
+                  placeholder="Enter team's name"
                   className="mt-1 w-full text-sm border rounded-md outline-none px-2 py-1 text-zinc-950 placeholder:text-zinc-500"
                 />
               </div>
