@@ -115,7 +115,7 @@ const PopoverPage = () => {
     <div className="w-full h-screen flex items-center justify-center">
       <Popover>
         <PopoverTrigger asChild>
-          <button className="-translate-y-40 translate-x-16 min-w-14 px-4 py-1 hover:bg-zinc-100 transition-all rounded-md border text-sm font-medium shadow-sm">
+          <button className="-translate-y-40 translate-x-28 lg:translate-x-16 min-w-14 px-4 py-1 hover:bg-zinc-100 transition-all rounded-md border text-sm font-medium shadow-sm">
             Open
           </button>
         </PopoverTrigger>
