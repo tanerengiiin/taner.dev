@@ -1,9 +1,9 @@
-import { codeToHtml } from "shiki/bundle/web";
+import { codeToHtml } from "shiki";
 import {
   transformerNotationHighlight,
   transformerNotationDiff,
 } from "@shikijs/transformers";
-import type { BundledLanguage } from "shiki/bundle/web";
+import type { BundledLanguage } from "shiki";
 import { cn } from "@/lib/utils";
 
 type Props = {
