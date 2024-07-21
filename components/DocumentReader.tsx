@@ -26,11 +26,11 @@ const DocumentReader = ({ doc }: Props) => {
       {doc?.document.map((item, index) => {
         switch (item.type) {
           case "p":
-            return <ParagraphViewer text={item.content} />;
+            return <ParagraphViewer key={index} text={item.content} />;
           case "title":
-            return <TitleViewer title={item.content} />;
+            return <TitleViewer key={index} title={item.content} />;
           case "code":
-            return <CodeViewer code={item.content} />;
+            return <CodeViewer key={index} code={item.content} />;
         }
       })}
     </>
