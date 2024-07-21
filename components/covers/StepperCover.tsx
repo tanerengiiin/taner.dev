@@ -32,7 +32,7 @@ const StepperCover = () => {
       <Stepper
         orientation={orientation}
         onChangeStep={(val)=>console.log(val)}
-        className="w-3/4 mb-2 rounded-lg border border-neutral-200 bg-white"
+        className="w-5/6 lg:w-3/4 mb-2 rounded-lg border border-neutral-200 bg-white"
       >
         <StepperContent>
           <Step>
