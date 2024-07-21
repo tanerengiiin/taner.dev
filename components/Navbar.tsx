@@ -1,10 +1,9 @@
 "use client";
 import { ArrowTopLeftIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useNavbar } from "./navbar-context";
 import { usePathname } from "next/navigation";
-import { generateId } from "@/lib/utils";
 const Navbar = () => {
   const pathname = usePathname();
   const { backTo, navs } = useNavbar();
@@ -21,15 +20,6 @@ const Navbar = () => {
         </span>
         <span className="">{backTo.title}</span>
       </Link>
-      {/* <ul>
-        {navsObject?.map((item, index) => (
-          <li key={index}>
-            <Link href={item.id} className="">
-              {item.title}
-            </Link>
-          </li>
-        ))}
-      </ul> */}
     </nav>
   );
 };

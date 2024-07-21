@@ -4,7 +4,6 @@ import React, {
   useContext,
   useState,
   ReactNode,
-  useEffect,
 } from "react";
 
 interface NavbarContextProps {
