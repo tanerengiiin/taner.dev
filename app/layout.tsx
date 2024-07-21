@@ -19,14 +19,14 @@ export default function RootLayout({
       <LayoutClient>
         <body className={GeistSans.className} style={GeistSans.style}>
           <div className="max-w-xl lg:max-w-[1024px] mx-auto px-5">
-            <main className="relative flex flex-col lg:grid lg:grid-cols-[192px_1fr_192px] mx-auto pt-8 sm:pt-20 lg:pt-40 pb-28 gap-x-8">
+            <main className="relative flex flex-col lg:grid lg:grid-cols-[192px_1fr_192px] mx-auto pt-16 sm:pt-20 lg:pt-40 pb-28 gap-x-8">
               <div className="w-full lg:sticky lg:top-40 lg:mb-0 mb-8">
                 <Navbar />
               </div>
               {children}
             </main>
           </div>
-          <div className="fixed top-0 w-full h-[60px] lg:h-[80px] backdrop-blur-sm z-30 [mask-image:linear-gradient(to_top,rgba(255,255,255,0)_0%,rgba(255,255,255,1)_90%)]" />
+          <div className="fixed top-0 w-full h-[60px] lg:h-[80px] backdrop-blur-sm z-30 [mask-image:linear-gradient(to_top,rgba(255,255,255,0)_0%,rgba(255,255,255,1)_75%)]" />
         </body>
       </LayoutClient>
     </html>
