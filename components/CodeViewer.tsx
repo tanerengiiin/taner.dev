@@ -1,3 +1,5 @@
+"use client"
+import React, { useEffect, useState } from "react";
 import { codeToHtml } from "shiki";
 import {
   transformerNotationHighlight,
@@ -12,16 +14,26 @@ type Props = {
   filename?: string;
   className?: string;
 };
-export default async function CodeViewer({
+
+export default function CodeViewer({
   code,
   lang = "jsx",
   className,
 }: Props) {
-  const html = await codeToHtml(code, {
-    lang,
-    theme: "github-light",
-    transformers: [transformerNotationHighlight(), transformerNotationDiff()],
-  });
+  const [html, setHtml] = useState("");
+
+  useEffect(() => {
+    async function highlightCode() {
+      const htmlContent = await codeToHtml(code, {
+        lang,
+        theme: "github-light",
+        transformers: [transformerNotationHighlight(), transformerNotationDiff()],
+      });
+      setHtml(htmlContent);
+    }
+
+    highlightCode();
+  }, [code, lang]);
 
   return (
     <div
