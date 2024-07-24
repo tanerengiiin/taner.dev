@@ -32,7 +32,7 @@ export const ParagraphViewer: React.FC<ParagraphViewerProps> = ({
           return (
             <strong
               {...attributesToProps(attribs)}
-              className="font-medium text-neutral-900"
+              className="font-medium text-neutral-800"
             >
               {children && domToReact(children as DOMNode[], options)}
             </strong>
@@ -44,7 +44,7 @@ export const ParagraphViewer: React.FC<ParagraphViewerProps> = ({
           return (
             <code
               {...attributesToProps(attribs)}
-              className="bg-neutral-50 px-1.5 py-0.5 border border-neutral-200 rounded-md text-neutral-900 text-sm leading-none"
+              className="bg-neutral-50 px-1.5 py-0.5 border border-neutral-200 rounded-md text-neutral-800 text-sm leading-none"
             >
               {children && domToReact(children as DOMNode[], options)}
             </code>
@@ -71,8 +71,8 @@ export const TitleViewer = ({ title }: TitleViewer) => {
   return (
     <h1
       id={id}
-      className="relative mt-10 col-start-2 text-neutral-900 leading-normal font-medium text-[15px] underline underline-offset-4 decoration-wavy decoration-1 decoration-neutral-400/50"
-    >
+      className="relative mt-10 col-start-2 text-neutral-700 leading-normal font-medium text-[15px] underline underline-offset-4 decoration-wavy decoration-1 decoration-neutral-400/30"
+      >
       {title}
     </h1>
   );

@@ -5,7 +5,7 @@ const stepper_component = [
   },
   {
     type: "title",
-    content: "Stepper Component",
+    content: "Stepper",
   },
   {
     type: "p",
@@ -17,7 +17,7 @@ const stepper_component = [
   },
   {
     type: "title",
-    content: "StepperContent Component",
+    content: "StepperContent",
   },
   {
     type: "p",
@@ -33,7 +33,7 @@ const stepper_component = [
   },
   {
     type: "title",
-    content: "Step Component",
+    content: "Step",
   },
   {
     type: "p",
@@ -41,7 +41,7 @@ const stepper_component = [
   },
   {
     type: "title",
-    content: "StepperControls Component",
+    content: "StepperControls",
   },
   {
     type: "p",
@@ -49,7 +49,7 @@ const stepper_component = [
   },
   {
     type: "title",
-    content: "StepperNext and StepperBack Components",
+    content: "StepperNext and StepperBack",
   },
   {
     type: "p",
