@@ -29,6 +29,7 @@ const StepperCover = () => {
       >
         {orientation}
       </button>
+      
       <Stepper
         orientation={orientation}
         className="w-5/6 lg:w-3/4 mb-2 rounded-lg border border-neutral-200 bg-white"

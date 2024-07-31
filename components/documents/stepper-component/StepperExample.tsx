@@ -35,7 +35,7 @@ const StepperExample = () => {
           side="top"
           className="p-0 overflow-hidden rounded-xl shadow-sm"
         >
-          <Stepper step={step} className="w-full">
+          <Stepper transition={{ duration: 0.5, type: "spring", bounce: 0.15 }} step={step} className="w-full">
             <StepperContent>
               <Step className="p-2 w-full flex flex-col">
                 <div

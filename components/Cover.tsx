@@ -30,17 +30,20 @@ const Cover = React.forwardRef<
         <div className="mt-3">
           <div className="text-neutral-700 space-x-2">
             <Link
-              href={to ?? '/'} scroll={false}
+              href={to ?? "/"}
+              scroll={true}
               className="underline underline-offset-2 decoration-neutral-300 hover:decoration-neutral-700 transition-all"
             >
-              {title ?? 'Index'}
+              {title ?? "Index"}
             </Link>
-            {!!date && <time className="opacity-70 text-sm">
-              {new Intl.DateTimeFormat("en-US", {
-                year: "numeric",
-                month: "long",
-              }).format(new Date(date ?? '2024'))}
-            </time>}
+            {!!date && (
+              <time className="opacity-70 text-sm">
+                {new Intl.DateTimeFormat("en-US", {
+                  year: "numeric",
+                  month: "long",
+                }).format(new Date(date ?? "2024"))}
+              </time>
+            )}
           </div>
           {!!description && (
             <p className="mt-1.5 text-sm text-neutral-500">{description}</p>

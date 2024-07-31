@@ -486,7 +486,7 @@ const StepperExample = () => {
         side="top"
         className="p-0 overflow-hidden rounded-xl shadow-sm"
       >
-        <Stepper step={step} className="w-full">
+        <Stepper transition={{ duration: 0.5, type: "spring", bounce: 0.15 }} step={step} className="w-full">
           <StepperContent>
             <Step className="p-2 w-full flex flex-col">
               <div
@@ -618,5 +618,33 @@ const StepperExample = () => {
 export default StepperExample;
 `,
   },
+  {
+    type: "p",
+    content: "",
+  },
+  {
+    type: "p",
+    content: "Try changing orientation.",
+  },
+  {
+    type: "code",
+    content: `...
+  <PopoverContent
+    sideOffset={20}
+    side="top"
+    className="p-0 overflow-hidden rounded-xl shadow-sm"
+  >
+    <Stepper orientation='vertical' transition={{ duration: 0.5, type: "spring", bounce: 0.15 }} step={step} className="w-full">// [!code highlight]
+      <StepperContent>
+...`,
+  },
+  {
+    type:'p',
+    content:''
+  },
+  {
+    type:'p',
+    content:"You can check out the course prepared by <a href='https://animations.dev/' target='_blank'>Emil Kowalski</a> to learn more about <strong>Framer Motion</strong> in detail."
+  }
 ];
 export default stepper_component;
