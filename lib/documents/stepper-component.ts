@@ -3,7 +3,7 @@ import StepperExample from "@/components/documents/stepper-component/StepperExam
 const stepper_component = [
   {
     type: "p",
-    content: `In this article, I will explain how I created a multi-step component using Framer Motion and React. I designed a simple and easily customizable Stepper component. Below, I will walk you through the steps of how I coded it.`,
+    content: `In this article, I will explain how I created a multi-step component using <strong>Framer Motion</strong> and <strong>React</strong>. I designed a simple and easily customizable Stepper component. Below, I will walk you through the steps of how I coded it.`,
   },
   {
     type: "title",
@@ -11,7 +11,7 @@ const stepper_component = [
   },
   {
     type: "p",
-    content: `The Stepper component is the main component that encapsulates the entire multi-step content. Using the Context API, we facilitate communication between the Stepper components. With Framer Motion, we can manage all transitions by sending the transition animations to the MotionConfig component.`,
+    content: `<code>Stepper</code> component is the main component that encapsulates the entire multi-step content. Using the Context API, we facilitate communication between the Stepper components. With Framer Motion, we can manage all transitions by sending the transition animations to the MotionConfig component.`,
   },
   {
     type: "p",
@@ -23,11 +23,11 @@ const stepper_component = [
   },
   {
     type: "p",
-    content: `StepperContent defines the slide animations for moving left-right or up-down. Each step sent to it will move in an animated manner. We achieve this with Framer Motion. Using features like custom and variants here is more beneficial and performant.`,
+    content: `<code>StepperContent</code> defines the slide animations for moving left-right or up-down. Each step sent to it will move in an animated manner. We achieve this with Framer Motion. Using features like custom and variants here is more beneficial and performant.`,
   },
   {
     type: "p",
-    content: `Variants define how the component should behave in a certain state. Since our animation changes dynamically (e.g., moving x position from right to left when sliding left or from left to right when sliding right), we use the custom prop to send dynamic values to Framer Motion. The values given to the custom prop can be passed to the variants we defined. One important thing to note here is that we need to send the custom value to AnimatePresence as well as the motion component.`,
+    content: `Variants define how the component should behave in a certain state. Since our animation changes dynamically (e.g., moving x position from right to left when sliding left or from left to right when sliding right), we use the custom prop to send dynamic values to Framer Motion. The values given to the custom prop can be passed to the variants we defined. One important thing to note here is that we need to send the custom value to <code>AnimatePresence</code> as well as <code>motion</code> component.`,
   },
   {
     type: "p",
@@ -39,7 +39,7 @@ const stepper_component = [
   },
   {
     type: "p",
-    content: `The Step component allows us to filter the steps sent to the Stepper within the StepperContent.`,
+    content: `The Step component allows us to filter the steps sent to the <code>Stepper</code> within the <code>StepperContent</code>.`,
   },
   {
     type: "title",
@@ -47,7 +47,7 @@ const stepper_component = [
   },
   {
     type: "p",
-    content: `StepperControls keeps the parts that remain static outside the sliding section. We need to keep the parts outside the sliding section in this component because we can filter this within the motion component in the Stepper component.`,
+    content: `<code>StepperControls</code> keeps the parts that remain static outside the sliding section. We need to keep the parts outside the sliding section in this component because we can filter this within the motion component in the Stepper component.`,
   },
   {
     type: "title",
@@ -55,7 +55,7 @@ const stepper_component = [
   },
   {
     type: "p",
-    content: `StepperNext and StepperBack are components made up of buttons. You can customize these components according to your needs, but make sure to use the functions I used.`,
+    content: `<code>StepperNext</code> and <code>StepperBack</code> are components made up of buttons. You can customize these components according to your needs, but make sure to use the functions I used.`,
   },
   {
     type: "title",
@@ -473,13 +473,15 @@ const StepperExample = () => {
     <Popover open={open} onOpenChange={(val) => setOpen(val)}>
       <PopoverTrigger asChild>
         <Button
-          onClick={() => setOpen(true)}
-          size={"icon"}
-          variant={"outline"}
-          className="rounded-lg"
-        >
-          <InboxIcon className="h-4 w-4" />
-        </Button>
+            onClick={() => setOpen(true)}
+            size={"icon"}
+            variant={"outline"}
+            className="rounded-lg group"
+          >
+            <InboxIcon
+              className={\`\h-4 w-4  transition-all duration-300 \${open ? "scale-125" : "group-hover:scale-125"}\`}
+            />
+          </Button>
       </PopoverTrigger>
       <PopoverContent
         sideOffset={20}
@@ -624,7 +626,7 @@ export default StepperExample;
   },
   {
     type: "p",
-    content: "Try changing orientation.",
+    content: "Try changing <strong>orientation</strong>.",
   },
   {
     type: "code",
@@ -639,12 +641,13 @@ export default StepperExample;
 ...`,
   },
   {
-    type:'p',
-    content:''
+    type: "p",
+    content: "",
   },
   {
-    type:'p',
-    content:"You can check out the course prepared by <a href='https://animations.dev/' target='_blank'>Emil Kowalski</a> to learn more about <strong>Framer Motion</strong> in detail."
-  }
+    type: "p",
+    content:
+      "You can check out the course prepared by <a href='https://animations.dev/' target='_blank'>Emil Kowalski</a> to learn more about <strong>Framer Motion</strong> in detail.",
+  },
 ];
 export default stepper_component;

@@ -29,7 +29,7 @@ const Navbar = () => {
     }
   };
   return (
-    <nav className="flex flex-col gap-4 ">
+    <nav className="relative flex flex-col gap-4">
       <Link
         href={backTo.to}
         className="text-neutral-700 inline-flex items-center gap-1.5 italic font-serif"
@@ -40,7 +40,7 @@ const Navbar = () => {
         <span className="">{backTo.title}</span>
       </Link>
       {navs && (
-        <ul className="hidden lg:flex flex-col gap-2.5 mt-3 pl-1">
+        <ul className="absolute top-16 left-2 hidden lg:flex flex-col gap-2.5">
           {navs.map((item, index) => (
             <li
               key={index}

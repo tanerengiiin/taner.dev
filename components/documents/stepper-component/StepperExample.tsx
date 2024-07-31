@@ -25,9 +25,13 @@ const StepperExample = () => {
             onClick={() => setOpen(true)}
             size={"icon"}
             variant={"outline"}
-            className="rounded-lg"
+            className="rounded-lg group"
           >
-            <InboxIcon className="h-4 w-4" />
+            <InboxIcon
+              className={`h-4 w-4  transition-all duration-300 ${
+                open ? "scale-125" : "group-hover:scale-125"
+              }`}
+            />
           </Button>
         </PopoverTrigger>
         <PopoverContent
@@ -35,7 +39,11 @@ const StepperExample = () => {
           side="top"
           className="p-0 overflow-hidden rounded-xl shadow-sm"
         >
-          <Stepper transition={{ duration: 0.5, type: "spring", bounce: 0.15 }} step={step} className="w-full">
+          <Stepper
+            transition={{ duration: 0.5, type: "spring", bounce: 0.15 }}
+            step={step}
+            className="w-full"
+          >
             <StepperContent>
               <Step className="p-2 w-full flex flex-col">
                 <div
