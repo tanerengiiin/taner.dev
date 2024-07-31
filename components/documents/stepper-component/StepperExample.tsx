@@ -1,26 +1,24 @@
 "use client";
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { InboxIcon } from "@heroicons/react/20/solid";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { Step, Stepper, StepperContent } from "@/components/ui/stepper";
 import {
-  Step,
-  Stepper,
-  StepperContent,
-} from "@/components/ui/stepper";
-import { CheckCircleIcon } from "@heroicons/react/20/solid";
-import { ChatBubbleLeftIcon } from "@heroicons/react/20/solid";
+  CheckCircleIcon,
+  ChatBubbleLeftIcon,
+  InboxIcon,
+} from "@heroicons/react/20/solid";
 import { Textarea } from "@/components/ui/textarea";
 import ComponentViewer from "@/components/ComponentViewer";
 const StepperExample = () => {
   const [step, setStep] = useState(0);
   const [open, setOpen] = useState(false);
   return (
-    <ComponentViewer className="flex items-center justify-center">
+    <ComponentViewer className="h-[480px] flex items-center justify-center">
       <Popover open={open} onOpenChange={(val) => setOpen(val)}>
         <PopoverTrigger asChild>
           <Button

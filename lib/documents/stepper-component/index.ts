@@ -1,4 +1,4 @@
-import StepperExample from "./StepperExample";
+import StepperExample from "@/components/documents/stepper-component/StepperExample";
 
 const stepper_component = [
   {

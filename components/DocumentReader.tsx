@@ -17,7 +17,7 @@ const DocumentReader = ({ doc }: Props) => {
           (item) => item.type === "title" && item.content
         )}
       />
-      <div className="mb-4">
+      <div className="mb-4 col-start-2" style={{gridColumn:2}}>
         <h1 className="text-neutral-700 font-medium mb-0.5">{doc?.title}</h1>
         {!!doc?.date && (
           <time className="opacity-75 text-sm">
