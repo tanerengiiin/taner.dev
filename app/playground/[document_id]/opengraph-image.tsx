@@ -32,7 +32,7 @@ export default async function Image({
       // ImageResponse JSX element
       <div
         style={{ display: "flex" }}
-        tw="bg-white w-full h-full flex-col justify-between px-12 pb-20"
+        tw="bg-white w-full h-full flex-col justify-between px-16 pb-24"
       >
         <div style={{ display: "flex" }}></div>
         <div style={{ display: "flex" }} tw="flex-col">
