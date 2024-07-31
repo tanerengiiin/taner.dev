@@ -9,7 +9,7 @@ const ComponentViewer = React.forwardRef<
     <div
       ref={ref}
       className={cn(
-        "col-span-3 mt-10 relative z-50 bg-neutral-50 rounded-xl p-8",
+        "col-span-3 mt-10 relative z-30 bg-neutral-50 rounded-xl p-8",
         className
       )}
       {...props}
