@@ -96,7 +96,15 @@ const Stepper = React.forwardRef<
     };
 
     React.useEffect(() => {
-      setCurrentStep(step);
+      if(step==undefined) return;
+      setCurrentStep((prev) => {
+        if (prev < step) {
+          setDirection(1);
+        }else{
+          setDirection(-1)
+        }
+        return step;
+      });
     }, [step]);
 
     return (

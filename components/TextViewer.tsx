@@ -1,4 +1,4 @@
-import { generateId } from "@/lib/utils";
+import { cn, generateId } from "@/lib/utils";
 import React from "react";
 import parse, {
   domToReact,
@@ -10,10 +10,12 @@ import parse, {
 
 type ParagraphViewerProps = {
   text?: string;
+  className?:string;
 };
 
 export const ParagraphViewer: React.FC<ParagraphViewerProps> = ({
   text = "",
+  className,
 }) => {
   const options: HTMLReactParserOptions = {
     replace: (domNode) => {
@@ -55,7 +57,7 @@ export const ParagraphViewer: React.FC<ParagraphViewerProps> = ({
   };
 
   return (
-    <p className="mt-8 col-start-2 text-neutral-700 leading-normal text-[15px]">
+    <p className={cn("mt-8 col-start-2 text-neutral-700 leading-normal text-[15px]",className)}>
       {parse(text, options)}
     </p>
   );
@@ -70,7 +72,7 @@ export const TitleViewer = ({ title }: TitleViewer) => {
   const id = generateId(title);
   return (
     <h1
-      id={id}
+      id={id} 
       className="relative mt-10 col-start-2 text-neutral-700 leading-normal font-medium text-[15px] underline underline-offset-4 decoration-wavy decoration-1 decoration-neutral-400/30"
       >
       {title}

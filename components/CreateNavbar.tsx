@@ -1,13 +1,10 @@
-"use client"
+"use client";
 import React, { useEffect } from "react";
-import { useNavbar } from "./navbar-context";
+import { BackTo, Nav, useNavbar } from "./navbar-context";
 
 type CreateNavbarProps = {
-  backTo?: {
-    title: string;
-    to: string;
-  };
-  navs?: string[];
+  backTo?: BackTo;
+  navs?: Nav[];
 };
 
 const CreateNavbar = ({ backTo, navs }: CreateNavbarProps) => {

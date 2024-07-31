@@ -1,18 +1,19 @@
-"use client"
-import React, {
-  createContext,
-  useContext,
-  useState,
-  ReactNode,
-} from "react";
+"use client";
+import React, { createContext, useContext, useState, ReactNode } from "react";
 
+interface BackTo {
+  title: string;
+  to: string;
+}
+
+interface Nav {
+  type: "title";
+  content: string;
+}
 interface NavbarContextProps {
-  backTo: {
-    title: string;
-    to: string;
-  };
-  navs: string[];
-  changeNavs: (backTo?: { title: string; to: string }, navs?: string[]) => void;
+  backTo: BackTo;
+  navs: Nav[] | null;
+  changeNavs: (backTo?: BackTo, navs?: Nav[]) => void;
 }
 
 const defaultContext: NavbarContextProps = {
@@ -20,22 +21,17 @@ const defaultContext: NavbarContextProps = {
     title: "Index",
     to: "/",
   },
-  navs: [],
+  navs: null as Nav[] | null,
   changeNavs: () => {},
 };
 
 const NavbarContext = createContext<NavbarContextProps>(defaultContext);
 
 const NavbarProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [navs, setNavs] = useState<string[]>(defaultContext.navs);
-  const [backTo, setBackTo] = useState<{ title: string; to: string }>(
-    defaultContext.backTo
-  );
+  const [navs, setNavs] = useState<Nav[] | null>(defaultContext.navs);
+  const [backTo, setBackTo] = useState<BackTo>(defaultContext.backTo);
 
-  const changeNavs = (
-    newBackTo?: { title: string; to: string },
-    newNavs?: string[]
-  ) => {
+  const changeNavs = (newBackTo?: BackTo, newNavs?: Nav[]) => {
     setNavs(newNavs ?? defaultContext.navs);
     setBackTo(newBackTo ?? defaultContext.backTo);
   };
@@ -55,4 +51,5 @@ const useNavbar = () => {
   return context;
 };
 
+export type {BackTo, Nav}
 export { NavbarProvider, useNavbar };

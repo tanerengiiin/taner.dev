@@ -11,9 +11,14 @@ type Props = {
 const DocumentReader = ({ doc }: Props) => {
   return (
     <>
-      <CreateNavbar backTo={doc?.backTo} navs={doc?.document.map((item)=> item.type==='title' && item.content)} />
-      <div className="col-start-2 mb-4">
-        <h1 className=" text-neutral-700 font-medium mb-0.5">{doc?.title}</h1>
+      <CreateNavbar
+        backTo={doc?.backTo}
+        navs={doc?.document.filter(
+          (item) => item.type === "title" && item.content
+        )}
+      />
+      <div className="mb-4">
+        <h1 className="text-neutral-700 font-medium mb-0.5">{doc?.title}</h1>
         {!!doc?.date && (
           <time className="opacity-75 text-sm">
             {new Intl.DateTimeFormat("en-US", {
@@ -30,7 +35,12 @@ const DocumentReader = ({ doc }: Props) => {
           case "title":
             return <TitleViewer key={index} title={item.content} />;
           case "code":
-            return <CodeViewer key={index} code={item.content} />;
+            return (
+              <CodeViewer key={index} code={item.content} lang={item?.lang} />
+            );
+          case "component":
+            const Component = item.content;
+            return <Component key={index} />;
         }
       })}
     </>

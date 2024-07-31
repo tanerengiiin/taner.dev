@@ -31,7 +31,6 @@ const StepperCover = () => {
       </button>
       <Stepper
         orientation={orientation}
-        onChangeStep={(val)=>console.log(val)}
         className="w-5/6 lg:w-3/4 mb-2 rounded-lg border border-neutral-200 bg-white"
       >
         <StepperContent>
@@ -56,8 +55,8 @@ const StepperCover = () => {
                 <div className="w-3/4 h-4 rounded-full bg-neutral-200/75 animate-pulse"></div>
                 <div className="w-2/4 h-4 rounded-full bg-neutral-200/75 animate-pulse delay-500"></div>
                 <div className="w-1/4 h-4 rounded-full bg-neutral-200/75 animate-pulse delay-1000"></div>
-                <div className="w-2/4 h-4 rounded-full bg-neutral-200/75 animate-pulse delay-[1.5s]"></div>
-                <div className="w-2/3 h-4 rounded-full bg-neutral-200/75 animate-pulse delay-[2s]"></div>
+                <div className="w-2/4 h-4 rounded-full bg-neutral-200/75 animate-pulse delay-500"></div>
+                <div className="w-2/3 h-4 rounded-full bg-neutral-200/75 animate-pulse delay-100"></div>
               </div>
             </div>
           </Step>

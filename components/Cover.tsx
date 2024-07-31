@@ -30,7 +30,7 @@ const Cover = React.forwardRef<
         <div className="mt-3">
           <div className="text-neutral-700 space-x-2">
             <Link
-              href={to ?? '/'}
+              href={to ?? '/'} scroll={false}
               className="underline underline-offset-2 decoration-neutral-300 hover:decoration-neutral-700 transition-all"
             >
               {title ?? 'Index'}

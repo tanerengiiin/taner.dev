@@ -1,3 +1,5 @@
+import StepperExample from "./StepperExample";
+
 const stepper_component = [
   {
     type: "p",
@@ -57,11 +59,30 @@ const stepper_component = [
   },
   {
     type: "title",
-    content: "Here is the overall structure of the components:",
+    content: "Overall structure of the components:",
   },
   {
-    type:'p',
-    content:'Firstly, create a <code>stepper.tsx</code> file and paste the code.'
+    type: "p",
+    content:
+      "Firstly, install the following dependencies and create <code>/lib/utils.ts</code> file, paste the code below.",
+  },
+  {
+    type: "code",
+    lang: "text",
+    content: `npm install react-use-measure framer-motion tailwind-merge clsx `,
+  },
+  {
+    type: "code",
+    content: `import { type ClassValue, clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}   `,
+  },
+  {
+    type: "p",
+    content: "Then, create a <code>stepper.tsx</code> file and paste the code.",
   },
   {
     type: "code",
@@ -360,7 +381,62 @@ export {
   },
   {
     type: "p",
-    content: `This example component structure enables you to easily create and customize multi-step components. Using this setup in your projects, you can develop dynamic and user-friendly components with Framer Motion and React.`,
+    content: "Then, you can use it like this:",
+  },
+  {
+    type: "code",
+    content: `"use client"
+    
+import {
+  Step,
+  Stepper,
+  StepperBack,
+  StepperContent,
+  StepperControls,
+  StepperNext,
+} from "@/components/ui/stepper";
+
+export function StepperDemo(){
+  return (
+    <Stepper
+      className="w-5/6 lg:w-3/4 mb-2 rounded-lg border border-neutral-200 bg-white">
+      <StepperContent>
+        <Step>
+          <div className="pt-3 w-full">
+            <div className="px-3 font-semibold text-neutral-900">This is step one</div>
+          </div>
+        </Step>
+        <Step>
+          <div className="pt-3 w-full">
+            <div className="px-3 font-semibold text-neutral-900">This is step two</div>
+          </div>
+        </Step>
+        <Step>
+          <div className="pt-3 w-full">
+            <div className="px-3 font-semibold text-neutral-900">This is step three</div>
+          </div>
+        </Step>
+      </StepperContent>
+      <StepperControls className="p-3 mt-3 border-t border-neutral-200 flex items-center justify-between gap-2 bg-white">
+        <StepperBack />
+        <StepperNext />
+      </StepperControls>
+    </Stepper>
+  )
+}
+    `,
+  },
+  {
+    type: "p",
+    content: `This example component structure enables you to easily create and customize multi-step components. Using this setup in your projects, you can develop dynamic and user-friendly components with <strong>Framer Motion</strong> and <strong>React</strong>.`,
+  },
+  {
+    type: "title",
+    content: "Example with Shadcn",
+  },
+  {
+    type: "component",
+    content: StepperExample,
   },
 ];
 export default stepper_component;
