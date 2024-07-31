@@ -31,7 +31,15 @@ const DocumentReader = ({ doc }: Props) => {
       {doc?.document.map((item, index) => {
         switch (item.type) {
           case "p":
-            return <ParagraphViewer key={index} text={item.content} />;
+            return (
+              <ParagraphViewer
+                key={index}
+                text={item.content}
+                alt={item.type === "alt"}
+              />
+            );
+          case "alt":
+            return <ParagraphViewer key={index} text={item.content} alt />;
           case "title":
             return <TitleViewer key={index} title={item.content} />;
           case "code":

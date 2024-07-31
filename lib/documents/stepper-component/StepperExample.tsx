@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import ComponentViewer from "@/components/ComponentViewer";
 import { Button } from "@/components/ui/button";
 import { InboxIcon } from "@heroicons/react/20/solid";
 import {
@@ -11,31 +10,32 @@ import {
 import {
   Step,
   Stepper,
-  StepperBack,
   StepperContent,
-  StepperControls,
-  StepperNext,
 } from "@/components/ui/stepper";
 import { CheckCircleIcon } from "@heroicons/react/20/solid";
 import { ChatBubbleLeftIcon } from "@heroicons/react/20/solid";
-import { Textarea } from "@/components/ui/textarea"
+import { Textarea } from "@/components/ui/textarea";
+import ComponentViewer from "@/components/ComponentViewer";
 const StepperExample = () => {
   const [step, setStep] = useState(0);
+  const [open, setOpen] = useState(false);
   return (
-    <ComponentViewer
-      className="h-96 flex items-center justify-center"
-      alt={`This component is inspired by a component created by <a href='https://twitter.com/mrncst/status/1801250951518412864' target='_blank'>Mariana Castilho</a>.`}
-    >
-      <Popover>
+    <ComponentViewer className="flex items-center justify-center">
+      <Popover open={open} onOpenChange={(val) => setOpen(val)}>
         <PopoverTrigger asChild>
-          <Button size={"icon"} variant={"outline"} className="rounded-lg">
+          <Button
+            onClick={() => setOpen(true)}
+            size={"icon"}
+            variant={"outline"}
+            className="rounded-lg"
+          >
             <InboxIcon className="h-4 w-4" />
           </Button>
         </PopoverTrigger>
         <PopoverContent
           sideOffset={20}
           side="top"
-          className="p-0 overflow-hidden rounded-xl"
+          className="p-0 overflow-hidden rounded-xl shadow-sm"
         >
           <Stepper step={step} className="w-full">
             <StepperContent>
@@ -93,8 +93,8 @@ const StepperExample = () => {
                           fill="none"
                         >
                           <path
-                            fill-rule="evenodd"
-                            clip-rule="evenodd"
+                            fillRule="evenodd"
+                            clipRule="evenodd"
                             d="M2.003 2.666c.368 0 .666.299.666.667v4h5.334v-4a.667.667 0 011.333 0v9.333a.667.667 0 11-1.333 0v-4H2.669v4a.667.667 0 11-1.333 0V3.333c0-.369.298-.667.667-.667zm12.282 4.063c.235.11.384.345.384.604v5.333a.667.667 0 01-1.333 0v-3.91l-.907.755a.667.667 0 11-.853-1.024l2-1.666a.667.667 0 01.71-.092z"
                             fill="currentColor"
                           ></path>
@@ -116,7 +116,15 @@ const StepperExample = () => {
                     >
                       Back
                     </Button>
-                    <Button className="flex-1 rounded-lg h-8">Approve</Button>
+                    <Button
+                      onClick={() => {
+                        setOpen(false);
+                        setStep(0);
+                      }}
+                      className="flex-1 rounded-lg h-8"
+                    >
+                      Approve
+                    </Button>
                   </div>
                 </div>
               </Step>
@@ -130,7 +138,7 @@ const StepperExample = () => {
                       Create Thread
                     </span>
                   </div>
-                  <Textarea className="!resize-none border-0 shadow-none " />
+                  <Textarea className="!resize-none border-0 shadow-none bg-neutral-100" />
                   <div className="flex w-full gap-2 text-[13px] text-[#171717]">
                     <Button
                       onClick={() => setStep(0)}
@@ -139,7 +147,15 @@ const StepperExample = () => {
                     >
                       Back
                     </Button>
-                    <Button className="flex-1 rounded-lg h-8">Submit</Button>
+                    <Button
+                      onClick={() => {
+                        setOpen(false);
+                        setStep(0);
+                      }}
+                      className="flex-1 rounded-lg h-8"
+                    >
+                      Submit
+                    </Button>
                   </div>
                 </div>
               </Step>

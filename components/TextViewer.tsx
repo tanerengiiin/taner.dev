@@ -10,12 +10,14 @@ import parse, {
 
 type ParagraphViewerProps = {
   text?: string;
-  className?:string;
+  className?: string;
+  alt?: boolean;
 };
 
 export const ParagraphViewer: React.FC<ParagraphViewerProps> = ({
   text = "",
   className,
+  alt,
 }) => {
   const options: HTMLReactParserOptions = {
     replace: (domNode) => {
@@ -55,9 +57,25 @@ export const ParagraphViewer: React.FC<ParagraphViewerProps> = ({
       }
     },
   };
-
+  if (alt) {
+    return (
+      <p
+        className={cn(
+          "mt-2.5 col-span-3 w-fit mx-auto text-neutral-500 leading-normal text-xs [&_a]:text-neutral-600",
+          className
+        )}
+      >
+        {parse(text, options)}
+      </p>
+    );
+  }
   return (
-    <p className={cn("mt-8 col-start-2 text-neutral-700 leading-normal text-[15px]",className)}>
+    <p
+      className={cn(
+        "mt-8 col-start-2 text-neutral-700 leading-normal text-[15px]",
+        className
+      )}
+    >
       {parse(text, options)}
     </p>
   );
@@ -72,9 +90,9 @@ export const TitleViewer = ({ title }: TitleViewer) => {
   const id = generateId(title);
   return (
     <h1
-      id={id} 
+      id={id}
       className="relative mt-10 col-start-2 text-neutral-700 leading-normal font-medium text-[15px] underline underline-offset-4 decoration-wavy decoration-1 decoration-neutral-400/30"
-      >
+    >
       {title}
     </h1>
   );
