@@ -61,7 +61,7 @@ export const ParagraphViewer: React.FC<ParagraphViewerProps> = ({
     return (
       <p
         className={cn(
-          "mt-2.5 col-span-3 w-fit mx-auto text-neutral-500 leading-normal text-xs [&_a]:text-neutral-600",
+          "mt-2.5 col-span-3 w-fit mx-auto text-neutral-500 leading-normal text-xs text-center [&_a]:text-neutral-600",
           className
         )}
       >
