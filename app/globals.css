@@ -96,7 +96,8 @@
     .line {
       @apply border-l-2 border-transparent;
       &.highlighted,
-      &.diff {
+      &.diff ,
+      &.focused{
         @apply -ml-4 inline-block w-[calc(100%+(theme(spacing.5)+theme(spacing.4)))] pl-4;
       }
       &.highlighted {
@@ -120,6 +121,16 @@
           span:first-child::before {
             @apply text-rose-500 content-["-"];
           }
+        }
+      }
+      &.focused{
+        position: relative;
+        &::after{
+          content: '';
+          z-index: 2;
+          position: absolute;
+          inset: 0px 0px 0px 12px;
+          backdrop-filter: blur(2px);
         }
       }
     }

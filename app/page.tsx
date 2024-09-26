@@ -64,7 +64,7 @@ export default function Home() {
       </div>
       <div className="mt-6 grid grid-cols-1 gap-10">
         {playgroundDocs
-          .slice(0, 2)
+          .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).slice(0,2)
           .map(({ id, title, description, date, to, cover }) => {
             const CoverComponent = cover;
             const coverProps = {

@@ -2,6 +2,7 @@ import { codeToHtml } from "shiki/bundle/web";
 import {
   transformerNotationHighlight,
   transformerNotationDiff,
+  transformerNotationFocus
 } from "@shikijs/transformers";
 import type { BundledLanguage } from "shiki/bundle/web";
 import { cn } from "@/lib/utils";
@@ -21,7 +22,7 @@ export default async function CodeViewer({
   const html = await codeToHtml(code, {
     lang,
     theme: "github-light",
-    transformers: [transformerNotationHighlight(), transformerNotationDiff()],
+    transformers: [transformerNotationHighlight(), transformerNotationDiff(), transformerNotationFocus()],
   });
 
   return (

@@ -10,29 +10,33 @@ export const metadata: Metadata = {
 
 const PlaygroundPage = () => {
   return (
-    <div className="col-start-2">
+    <>
       <CreateNavbar backTo={undefined} navs={undefined} />
-      <div className="text-neutral-700 flex items-end justify-between">
+      <div className="text-neutral-700 flex items-end justify-between col-start-2">
         <h5 className="font-medium">Playground</h5>
       </div>
-      <div className="mt-6 grid grid-cols-1 gap-10">
-        {playgroundDocs.map(({ id, title, description, date, to, cover }) => {
-          const CoverComponent = cover;
-          const coverProps = {
-            title,
-            description,
-            to,
-            date,
-          };
+      <div className="mt-6 grid grid-cols-1 gap-10  col-start-2">
+        {playgroundDocs
+          .sort(
+            (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+          )
+          .map(({ id, title, description, date, to, cover }) => {
+            const CoverComponent = cover;
+            const coverProps = {
+              title,
+              description,
+              to,
+              date,
+            };
 
-          return (
-            <Cover key={id} {...coverProps}>
-              <CoverComponent />
-            </Cover>
-          );
-        })}
+            return (
+              <Cover key={id} {...coverProps}>
+                <CoverComponent />
+              </Cover>
+            );
+          })}
       </div>
-    </div>
+    </>
   );
 };
 
