@@ -116,7 +116,6 @@ const setChartOptions = ( isDarkTheme = false) => {
             tooltipEl = document.createElement("div");
             tooltipEl.classList.add(
               "chartjs-tooltip",
-              "label-small",
               "px-2",
               "py-1",
               "dark:bg-neutral-900",
