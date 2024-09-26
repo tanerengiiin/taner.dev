@@ -1,5 +1,5 @@
 import stepper_component from "./documents/stepper-component";
-import chart_making from "./documents/chart-making";
+import chart_making from "./documents/charts";
 
 export type PlaygroundDoc = {
   id: string;
@@ -31,12 +31,12 @@ const playgroundDocs: PlaygroundDoc[] = [
     cover: "StepperCover",
   },
   {
-    id: "chart-making",
+    id: "charts",
     title: "Charts",
     description:
       "Explore simple and nice-looking charts made with Chart.js and React, featuring clean designs and smooth performance.",
     date: "2024-09-26",
-    to: "/playground/chart-making",
+    to: "/playground/charts",
     backTo: {
       title: "Playground",
       to: "/playground",

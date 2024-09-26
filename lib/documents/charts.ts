@@ -11,7 +11,7 @@ const chart_making = [
   },
   {
     type: "component",
-    content: "chart-making/LineChartComponent",
+    content: "charts/LineChartComponent",
   }, 
   {
     type: "code",
@@ -307,7 +307,7 @@ export default LineChart;
   },
   {
     type: "component",
-    content: 'chart-making/MultiLineChart',
+    content: 'charts/MultiLineChart',
   }, 
   {
     type:'code',
