@@ -1,6 +1,6 @@
 
 
-const chart_making = [
+const charts = [
   {
     type: "p",
     content: "",
@@ -327,4 +327,4 @@ export default LineChart;
     content:"Here’s a small trick to create multi-line charts, I'll share all the code with you soon. I’ll also be sharing other types of charts. <b>Follow me</b> on 𝕏 to stay updated → <a href=\"\https://x.com/tanerengiin\" target=\"\_blank\">tanerengiin</a>"
   }
 ];
-export default chart_making;
+export default charts;

@@ -1,5 +1,5 @@
 import stepper_component from "./documents/stepper-component";
-import chart_making from "./documents/charts";
+import charts from "./documents/charts";
 
 export type PlaygroundDoc = {
   id: string;
@@ -41,7 +41,7 @@ const playgroundDocs: PlaygroundDoc[] = [
       title: "Playground",
       to: "/playground",
     },
-    document: chart_making,
+    document: charts,
     cover: "ChartMakingCover",
   },
 ];
