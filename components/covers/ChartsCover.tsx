@@ -1,7 +1,7 @@
 import React from "react";
-import LineChart from "../documents/chart-making/LineChart";
+import LineChart from "../documents/charts/LineChart";
 
-const ChartMakingCover = () => {
+const ChartsCover = () => {
   return (
     <div className="relative cover-container flex items-center justify-center">
       <LineChart />
@@ -9,4 +9,4 @@ const ChartMakingCover = () => {
   );
 };
 
-export default ChartMakingCover;
+export default ChartsCover;

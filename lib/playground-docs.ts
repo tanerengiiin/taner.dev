@@ -42,7 +42,7 @@ const playgroundDocs: PlaygroundDoc[] = [
       to: "/playground",
     },
     document: charts,
-    cover: "ChartMakingCover",
+    cover: "ChartsCover",
   },
 ];
 
