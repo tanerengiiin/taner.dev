@@ -3,6 +3,7 @@ import React from "react";
 import CreateNavbar from "./CreateNavbar";
 import CodeViewer from "./CodeViewer";
 import { ParagraphViewer, TitleViewer } from "@/components/TextViewer";
+import dynamic from "next/dynamic";
 
 type Props = {
   doc: PlaygroundDoc | null | undefined;
@@ -17,7 +18,7 @@ const DocumentReader = ({ doc }: Props) => {
           (item) => item.type === "title" && item.content
         )}
       />
-      <div className="mb-4 col-start-2" style={{gridColumn:2}}>
+      <div className="mb-4 col-start-2" style={{ gridColumn: 2 }}>
         <h1 className="text-neutral-700 font-medium mb-0.5">{doc?.title}</h1>
         {!!doc?.date && (
           <time className="opacity-75 text-sm">
@@ -47,8 +48,15 @@ const DocumentReader = ({ doc }: Props) => {
               <CodeViewer key={index} code={item.content} lang={item?.lang} />
             );
           case "component":
-            const Component = item.content;
-            return <Component key={index} />;
+            const Component = dynamic(
+              () => import("@/components/documents/" + item.content),
+              {
+                ssr: false,
+              }
+            );
+            return (
+              <Component />
+            );
         }
       })}
     </>

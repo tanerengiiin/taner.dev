@@ -21,11 +21,12 @@ export async function generateMetadata(
   };
 }
 
-const DocumentPage = ({ params }: Props) => {
+const DocumentPage = async ({ params }: Props) => {
   const doc = playgroundDocs.find((x) => x.id === params.document_id);
   if (!doc || !doc?.document) {
     notFound();
   }
+
   return <DocumentReader doc={doc} />;
 };
 

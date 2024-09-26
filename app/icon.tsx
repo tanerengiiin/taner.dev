@@ -13,10 +13,11 @@ export default function Icon() {
     (
       <div
         style={{
-          fontSize: 24,
           background: "#266DF0",
           width: "100%",
           height: "100%",
+          minWidth:"16px",
+          minHeight:"16px",
           borderRadius:'999px'
         }}
       >

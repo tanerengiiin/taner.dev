@@ -1,5 +1,4 @@
-import LineChartComponent from "@/components/documents/chart-making/LineChartComponent";
-import MultiLineChart from "@/components/documents/chart-making/MultiLineChart";
+
 
 const chart_making = [
   {
@@ -12,7 +11,7 @@ const chart_making = [
   },
   {
     type: "component",
-    content: LineChartComponent,
+    content: "chart-making/LineChartComponent",
   }, 
   {
     type: "code",
@@ -308,7 +307,7 @@ export default LineChart;
   },
   {
     type: "component",
-    content: MultiLineChart,
+    content: 'chart-making/MultiLineChart',
   }, 
   {
     type:'code',

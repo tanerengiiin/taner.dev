@@ -1,4 +1,3 @@
-import StepperExample from "@/components/documents/stepper-component/StepperExample";
 
 const stepper_component = [
   {
@@ -445,7 +444,7 @@ export function StepperDemo(){
   },
   {
     type: "component",
-    content: StepperExample,
+    content: 'stepper-component/StepperExample',
   },
   {
     type: "alt",

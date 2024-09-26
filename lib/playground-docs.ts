@@ -1,8 +1,5 @@
-import StepperCover from "@/components/covers/StepperCover";
-import React from "react";
 import stepper_component from "./documents/stepper-component";
 import chart_making from "./documents/chart-making";
-import ChartMakingCover from "@/components/covers/ChartMakingCover";
 
 export type PlaygroundDoc = {
   id: string;
@@ -15,7 +12,7 @@ export type PlaygroundDoc = {
     to: string;
   };
   document: any[];
-  cover: React.ComponentType<any>;
+  cover: string;
 };
 
 const playgroundDocs: PlaygroundDoc[] = [
@@ -31,7 +28,7 @@ const playgroundDocs: PlaygroundDoc[] = [
       to: "/playground",
     },
     document: stepper_component,
-    cover: StepperCover,
+    cover: "StepperCover",
   },
   {
     id: "chart-making",
@@ -45,7 +42,7 @@ const playgroundDocs: PlaygroundDoc[] = [
       to: "/playground",
     },
     document: chart_making,
-    cover: ChartMakingCover,
+    cover: "ChartMakingCover",
   },
 ];
 

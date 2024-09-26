@@ -2,6 +2,7 @@ import Cover from "@/components/Cover";
 import CreateNavbar from "@/components/CreateNavbar";
 import playgroundDocs from "@/lib/playground-docs";
 import { Metadata } from "next";
+import dynamic from "next/dynamic";
 import React from "react";
 
 export const metadata: Metadata = {
@@ -21,17 +22,21 @@ const PlaygroundPage = () => {
             (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
           )
           .map(({ id, title, description, date, to, cover }) => {
-            const CoverComponent = cover;
             const coverProps = {
               title,
               description,
               to,
               date,
             };
-
+            const Component = dynamic(
+              () => import("@/components/covers/" + cover),
+              {
+                ssr: false,
+              }
+            );
             return (
               <Cover key={id} {...coverProps}>
-                <CoverComponent />
+                <Component />
               </Cover>
             );
           })}

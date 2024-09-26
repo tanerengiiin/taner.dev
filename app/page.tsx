@@ -2,6 +2,7 @@ import { ArrowTopRightIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 import playgroundDocs from "@/lib/playground-docs";
 import Cover from "@/components/Cover";
+import dynamic from "next/dynamic";
 export default function Home() {
   return (
     <div className="col-start-2">
@@ -64,19 +65,26 @@ export default function Home() {
       </div>
       <div className="mt-6 grid grid-cols-1 gap-10">
         {playgroundDocs
-          .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).slice(0,2)
+          .sort(
+            (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+          )
+          .slice(0, 2)
           .map(({ id, title, description, date, to, cover }) => {
-            const CoverComponent = cover;
             const coverProps = {
               title,
               description,
               to,
               date,
             };
-
+            const Component = dynamic(
+              () => import("@/components/covers/" + cover),
+              {
+                ssr: false,
+              }
+            );
             return (
               <Cover key={id} {...coverProps}>
-                <CoverComponent />
+                <Component />
               </Cover>
             );
           })}
