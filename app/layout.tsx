@@ -3,9 +3,10 @@ import { GeistSans } from "geist/font/sans";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import LayoutClient from "@/components/LayoutClient";
-import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.VERCEL_URL??'https://tanerr.dev'),
   title: "Taner Engin",
   description: "Frontend developer at Primetek.",
 };
@@ -21,7 +22,10 @@ export default function RootLayout({
         <body className={GeistSans.className} style={GeistSans.style}>
           <div className="max-w-lg lg:max-w-[1080px] mx-auto px-5">
             <main className="relative flex flex-col lg:grid lg:grid-cols-[200px_1fr_200px] mx-auto pt-16 sm:pt-20 lg:pt-40 pb-28 gap-x-16">
-              <div className="w-full lg:sticky lg:top-40 lg:mb-0 mb-8" style={{gridColumn:1}}>
+              <div
+                className="w-full lg:sticky lg:top-40 lg:mb-0 mb-8"
+                style={{ gridColumn: 1 }}
+              >
                 <Navbar />
               </div>
               {children}
