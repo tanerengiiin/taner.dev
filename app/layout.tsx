@@ -6,7 +6,7 @@ import LayoutClient from "@/components/LayoutClient";
 import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.VERCEL_URL??'https://tanerr.dev'),
+  metadataBase: new URL('https://'+(process.env.VERCEL_URL??'tanerr.dev')),
   title: "Taner Engin",
   description: "Frontend developer at Primetek.",
 };
