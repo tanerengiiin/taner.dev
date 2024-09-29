@@ -7,13 +7,9 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { Step, Stepper, StepperContent } from "@/components/ui/stepper";
-import {
-  CheckCircleIcon,
-  ChatBubbleLeftIcon,
-  InboxIcon,
-} from "@heroicons/react/20/solid";
 import { Textarea } from "@/components/ui/textarea";
 import ComponentViewer from "@/components/ComponentViewer";
+import { CircleCheck, Inbox, MessageCircle } from "lucide-react";
 const StepperExample = () => {
   const [step, setStep] = useState(0);
   const [open, setOpen] = useState(false);
@@ -27,8 +23,9 @@ const StepperExample = () => {
             variant={"outline"}
             className="rounded-lg group"
           >
-            <InboxIcon
-              className={`h-4 w-4  transition-all duration-300 ${
+            <Inbox
+            size={16}
+              className={` transition-all duration-300 ${
                 open ? "scale-125" : "group-hover:scale-125"
               }`}
             />
@@ -52,7 +49,7 @@ const StepperExample = () => {
                 >
                   <div className="flex items-center gap-2">
                     <span className="text-[#999999] transition-colors ease-out group-hover:text-[#171717] dark:text-white/40 group-hover:dark:text-white">
-                      <CheckCircleIcon className="w-4 h-4" />
+                      <CircleCheck size={15} />
                     </span>
                     <button className="font-medium text-[#3B3B3B] group-hover:text-[#171717] dark:text-white/90 group-hover:dark:text-white">
                       Approve Changes
@@ -68,7 +65,7 @@ const StepperExample = () => {
                 >
                   <div className="flex items-center gap-2">
                     <span className="text-[#999999] transition-colors ease-out group-hover:text-[#171717] dark:text-white/40 group-hover:dark:text-white">
-                      <ChatBubbleLeftIcon className="w-4 h-4" />
+                      <MessageCircle size={15} />
                     </span>
                     <button className="font-medium text-[#3B3B3B] group-hover:text-[#171717] dark:text-white/90 group-hover:dark:text-white">
                       Add Comment

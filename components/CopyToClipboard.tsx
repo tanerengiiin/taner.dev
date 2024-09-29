@@ -1,10 +1,9 @@
 "use client";
 
-import { CheckIcon, Square2StackIcon } from "@heroicons/react/24/outline";
 import { Button } from "./ui/button";
 import { AnimatePresence, motion, MotionConfig } from "framer-motion";
 import { useState } from "react";
-
+import { Copy,Check } from "lucide-react";
 export default function CopyToClipboard({ code }: { code: string }) {
   const [copied, setCopied] = useState(false);
   const copyToClipboard = async () => {
@@ -40,7 +39,7 @@ export default function CopyToClipboard({ code }: { code: string }) {
               animate="visible"
               exit="hidden"
             >
-              <CheckIcon className="w-4 h-4" />
+              <Check className="w-4 h-4" />
             </motion.span>
           ) : (
             <motion.span
@@ -50,7 +49,7 @@ export default function CopyToClipboard({ code }: { code: string }) {
               animate="visible"
               exit="hidden"
             >
-              <Square2StackIcon className="w-4 h-4" />
+              <Copy size={14} />
             </motion.span>
           )}
         </AnimatePresence>

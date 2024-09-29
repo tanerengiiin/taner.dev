@@ -1,5 +1,6 @@
 import stepper_component from "./documents/stepper-component";
 import charts from "./documents/charts";
+import toolbar from "./documents/toolbar";
 
 export type PlaygroundDoc = {
   id: string;
@@ -13,6 +14,7 @@ export type PlaygroundDoc = {
   };
   document: any[];
   cover: string;
+  hide?: boolean;
 };
 
 const playgroundDocs: PlaygroundDoc[] = [
@@ -43,6 +45,21 @@ const playgroundDocs: PlaygroundDoc[] = [
     },
     document: charts,
     cover: "ChartsCover",
+  },
+  {
+    id: "toolbar",
+    title: "Toolbar",
+    description:
+      "Explore simple and nice-looking charts made with Chart.js and React, featuring clean designs and smooth performance.",
+    date: "2024-10-01",
+    to: "/playground/toolbar",
+    backTo: {
+      title: "Playground",
+      to: "/playground",
+    },
+    document: toolbar,
+    cover: "ChartsCover",
+    hide: true,
   },
 ];
 

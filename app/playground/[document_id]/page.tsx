@@ -23,7 +23,7 @@ export async function generateMetadata(
 
 const DocumentPage = async ({ params }: Props) => {
   const doc = playgroundDocs.find((x) => x.id === params.document_id);
-  if (!doc || !doc?.document) {
+  if (!doc || !doc?.document || doc?.hide) {
     notFound();
   }
 

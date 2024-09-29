@@ -11,7 +11,7 @@ const toolbar = [
     },
     {
       type: "component",
-      content: "toolbar/Toolbar",
+      content: "toolbar-component/ToolbarComponent",
     }, 
     {
       type: "code",

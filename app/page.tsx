@@ -1,8 +1,8 @@
-import { ArrowTopRightIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 import playgroundDocs from "@/lib/playground-docs";
 import Cover from "@/components/Cover";
 import dynamic from "next/dynamic";
+import { ArrowUpRight } from "lucide-react";
 export default function Home() {
   return (
     <div className="col-start-2">
@@ -58,7 +58,7 @@ export default function Home() {
         >
           <h5 className="font-medium">Playground</h5>
           <span>
-            <ArrowTopRightIcon className="opacity-50 w-4 h-4" />
+            <ArrowUpRight size={16} className="opacity-50" />
           </span>
         </Link>
         <span className="opacity-70 text-sm">Recently shared</span>
@@ -68,6 +68,7 @@ export default function Home() {
           .sort(
             (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
           )
+          .filter((a) => !a.hide)
           .slice(0, 2)
           .map(({ id, title, description, date, to, cover }) => {
             const coverProps = {

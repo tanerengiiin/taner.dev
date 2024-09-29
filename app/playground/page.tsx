@@ -21,6 +21,7 @@ const PlaygroundPage = () => {
           .sort(
             (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
           )
+          .filter((a) => !a.hide)
           .map(({ id, title, description, date, to, cover }) => {
             const coverProps = {
               title,
