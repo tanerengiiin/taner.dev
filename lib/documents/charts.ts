@@ -239,7 +239,7 @@ const setChartPlugins = (isDarkTheme = false) => {
         scales: { x, y },
       } = chart;
 
-      if (tooltip._active.length > 0) {
+      if (tooltip?._active.length > 0) {
         const xCoor = x.getPixelForValue(tooltip.dataPoints[0].raw.x);
         const yCoor = y.getPixelForValue(tooltip.dataPoints[0].parsed.y);
         ctx.save();
