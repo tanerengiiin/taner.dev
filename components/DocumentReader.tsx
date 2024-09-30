@@ -34,18 +34,24 @@ const DocumentReader = ({ doc }: Props) => {
           case "p":
             return (
               <ParagraphViewer
-                key={index}
+                key={"p" + index}
                 text={item.content}
                 alt={item.type === "alt"}
               />
             );
           case "alt":
-            return <ParagraphViewer key={index} text={item.content} alt />;
+            return (
+              <ParagraphViewer key={"alt" + index} text={item.content} alt />
+            );
           case "title":
-            return <TitleViewer key={index} title={item.content} />;
+            return <TitleViewer key={"title" + index} title={item.content} />;
           case "code":
             return (
-              <CodeViewer key={index} code={item.content} lang={item?.lang} />
+              <CodeViewer
+                key={"code" + index}
+                code={item.content}
+                lang={item?.lang}
+              />
             );
           case "component":
             const Component = dynamic(
@@ -54,9 +60,7 @@ const DocumentReader = ({ doc }: Props) => {
                 ssr: false,
               }
             );
-            return (
-              <Component />
-            );
+            return <Component key={"component" + index} />;
         }
       })}
     </>
