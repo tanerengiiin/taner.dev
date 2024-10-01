@@ -18,10 +18,10 @@ const PlaygroundPage = () => {
       </div>
       <div className="mt-6 grid grid-cols-1 gap-10  col-start-2">
         {playgroundDocs
+          .filter((a) => !a.hide)
           .sort(
             (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
           )
-          .filter((a) => !a.hide)
           .map(({ id, title, description, date, to, cover }) => {
             const coverProps = {
               title,

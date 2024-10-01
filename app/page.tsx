@@ -65,10 +65,10 @@ export default function Home() {
       </div>
       <div className="mt-6 grid grid-cols-1 gap-10">
         {playgroundDocs
+          .filter((a) => !a.hide)
           .sort(
             (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
           )
-          .filter((a) => !a.hide)
           .slice(0, 2)
           .map(({ id, title, description, date, to, cover }) => {
             const coverProps = {

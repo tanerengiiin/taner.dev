@@ -9,9 +9,9 @@ const LineChartComponent = () => {
   return (
     <ComponentViewer className="py-20 lg:py-40 px-0">
       <div className="mx-auto flex items-center gap-3 mb-8 w-fit">
-        {colors.map((item) => (
+        {colors.map((item,index) => (
           <button
-            key={item}
+            key={index}
             onClick={() => setColor(item)}
             className={`${
               item === color ? "ring-2" : "ring-0 hover:opacity-80"
