@@ -25,7 +25,8 @@ const ToolbarComponent = () => {
   const [selectedOrientation, setSelectedOrientation] = useState("horizontal");
   const [selectedPosition, setSelectedPosition] = useState("bottom");
   return (
-    <ComponentViewer className="h-[360px] flex flex-col gap-6 items-center justify-center">
+    <ComponentViewer className="min-h-[360px] ">
+      <div className="w-full flex flex-col gap-6 items-center justify-center">
       <div className="flex items-center gap-1 border p-1 rounded-lg bg-white">
         {orientationData.map((item) => (
           <button
@@ -59,6 +60,7 @@ const ToolbarComponent = () => {
             {item.label}
           </button>
         ))}
+      </div>
       </div>
       <ToolbarPortal>
         <Toolbar orientation={selectedOrientation} position={selectedPosition}>
