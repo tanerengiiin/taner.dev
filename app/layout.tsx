@@ -31,7 +31,7 @@ export default function RootLayout({
               {children}
             </main>
           </div>
-          <div className="fixed top-0 w-full h-[60px] lg:h-[80px] backdrop-blur-sm z-50 [mask-image:linear-gradient(to_top,rgba(255,255,255,0)_0%,rgba(255,255,255,1)_75%)]" />
+          <div className="fixed top-0 w-full h-[60px] pointer-events-none lg:h-[80px] backdrop-blur-sm z-50 [mask-image:linear-gradient(to_top,rgba(255,255,255,0)_0%,rgba(255,255,255,1)_75%)]" />
           <Analytics />
         </body>
       </LayoutClient>

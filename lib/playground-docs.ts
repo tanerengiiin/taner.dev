@@ -50,16 +50,15 @@ const playgroundDocs: PlaygroundDoc[] = [
     id: "toolbar",
     title: "Toolbar",
     description:
-      "Explore simple and nice-looking charts made with Chart.js and React, featuring clean designs and smooth performance.",
-    date: "2024-10-01",
+      "A toolbar similar to Vercel's, built with Radix UI. Fully customizable to fit your needs.",
+    date: "2024-10-06",
     to: "/playground/toolbar",
     backTo: {
       title: "Playground",
       to: "/playground",
     },
     document: toolbar,
-    cover: "ChartsCover",
-    hide: true,
+    cover: "ToolbarCover",
   },
 ];
 
