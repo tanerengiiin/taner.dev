@@ -54,6 +54,13 @@ export const ParagraphViewer: React.FC<ParagraphViewerProps> = ({
             </code>
           );
         }
+
+        if (domNode.name === "br") {
+          const { attribs, children } = domNode;
+          return (
+            <br/>
+          );
+        }
       }
     },
   };

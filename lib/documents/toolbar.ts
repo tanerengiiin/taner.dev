@@ -1,21 +1,19 @@
-
-
 const toolbar = [
-    {
-      type: "p",
-      content: "",
-    },
-    {
-      type: "component",
-      content: "toolbar-component/ToolbarComponent",
-    }, 
-    {
-      type:"title",
-      content:"Usage"
-    },
-    {
-      type:"code",
-      content:`import {Bell, Bold, FolderOpen, Heart, Inbox, Italic, MessageCircle, Strikethrough} from "lucide-react";
+  {
+    type: "p",
+    content: "",
+  },
+  {
+    type: "component",
+    content: "toolbar-component/ToolbarComponent",
+  },
+  {
+    type: "title",
+    content: "Usage",
+  },
+  {
+    type: "code",
+    content: `import {Bell, Bold, FolderOpen, Heart, Inbox, Italic, MessageCircle, Strikethrough} from "lucide-react";
 
 import {
   Toolbar,
@@ -100,19 +98,19 @@ const ToolbarComponent = () => {
 };
 
 export default ToolbarComponent;
-      `
-    },
-    {
-      type:"title",
-      content:"Installation"
-    },
-    {
-      type:"code",
-      content:`npm install @radix-ui/react-toolbar @radix-ui/react-portal class-variance-authority framer-motion`
-    },
-    {
-      type: "code",
-      content: `"use client";
+      `,
+  },
+  {
+    type: "title",
+    content: "Installation",
+  },
+  {
+    type: "code",
+    content: `npm install @radix-ui/react-toolbar @radix-ui/react-portal class-variance-authority framer-motion`,
+  },
+  {
+    type: "code",
+    content: `"use client";
 import * as React from "react";
 import * as ToolbarPrimitive from "@radix-ui/react-toolbar";
 import * as PortalPrimitive from "@radix-ui/react-portal";
@@ -171,7 +169,7 @@ const Toolbar = React.forwardRef<
       <motion.div
         initial="initial"
         animate="active"
-        transition={{ duration: 0.5, type: "spring", bounce: 0 }}
+        transition={{ duration: 0.4, type: "spring", bounce: 0.12 }}
         variants={framerVariants}
         custom={position}
         className={cn(toolbarVariants({ position, className }))}
@@ -385,11 +383,20 @@ export {
   ToolbarToggleItem,
 };
   `,
-    },
-    {
-      type: "p",
-      content: "",
-    },
-  ];
-  export default toolbar;
-  
+  },
+  {
+    type: "title",
+    content: "API",
+  },
+  {
+    type: "p",
+    content:
+      "<code>position</code> : <code>center</code> <code>bottom</code> <code>top</code> <code>left</code> <code>right</code> <code>bottomleft</code> <code>bottomright</code> <code>topleft</code> <code>topright</code>",
+  },
+  {
+    type: "p",
+    content:
+      "See also the <a href='https://www.radix-ui.com/primitives/docs/components/toolbar' target='_blank'>Radix UI documentation</a>.",
+  },
+];
+export default toolbar;

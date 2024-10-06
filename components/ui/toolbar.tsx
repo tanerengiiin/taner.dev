@@ -57,7 +57,7 @@ const Toolbar = React.forwardRef<
       <motion.div
         initial="initial"
         animate="active"
-        transition={{ duration: 0.5, type: "spring", bounce: 0 }}
+        transition={{ duration: 0.4, type: "spring", bounce: 0.12 }}
         variants={framerVariants}
         custom={position}
         className={cn(toolbarVariants({ position, className }))}
