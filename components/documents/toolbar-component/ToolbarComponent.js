@@ -26,41 +26,50 @@ const ToolbarComponent = () => {
   const [selectedPosition, setSelectedPosition] = useState("bottom");
   return (
     <ComponentViewer className="min-h-[360px] ">
-      <div className="w-full flex flex-col gap-6 items-center justify-center">
-      <div className="flex items-center gap-1 border p-1 rounded-lg bg-white">
-        {orientationData.map((item) => (
-          <button
-            key={item.id}
-            onClick={() => setSelectedOrientation(item.id)}
-            className={`text-sm px-2 py-1 rounded-md  transition-all
+      <div
+        className="w-full flex flex-col gap-6 items-center justify-center"
+        style={{ gap: "1.5rem" }}
+      >
+        <div
+          className="flex items-center gap-1 border p-1 rounded-lg bg-white"
+          style={{ flexWrap: "wrap" }}
+        >
+          {orientationData.map((item) => (
+            <button
+              key={item.id}
+              onClick={() => setSelectedOrientation(item.id)}
+              className={`text-sm px-2 py-1 rounded-md  transition-all
               ${
                 item.id === selectedOrientation
                   ? "bg-neutral-900 text-white"
                   : "hover:bg-neutral-200"
               }
               `}
-          >
-            {item.label}
-          </button>
-        ))}
-      </div>
-      <div className="flex flex-wrap items-center gap-1 border p-1 rounded-lg bg-white">
-        {positionData.map((item) => (
-          <button
-            key={item.id}
-            onClick={() => setSelectedPosition(item.id)}
-            className={`text-sm px-2 py-1 rounded-md  transition-all whitespace-nowrap
+            >
+              {item.label}
+            </button>
+          ))}
+        </div>
+        <div
+          className="flex flex-wrap items-center gap-1 border p-1 rounded-lg bg-white"
+          style={{ flexWrap: "wrap" }}
+        >
+          {positionData.map((item) => (
+            <button
+              key={item.id}
+              onClick={() => setSelectedPosition(item.id)}
+              className={`text-sm px-2 py-1 rounded-md  transition-all whitespace-nowrap
               ${
                 item.id === selectedPosition
                   ? "bg-neutral-900 text-white"
                   : "hover:bg-neutral-200"
               }
               `}
-          >
-            {item.label}
-          </button>
-        ))}
-      </div>
+            >
+              {item.label}
+            </button>
+          ))}
+        </div>
       </div>
       <ToolbarPortal>
         <Toolbar orientation={selectedOrientation} position={selectedPosition}>
